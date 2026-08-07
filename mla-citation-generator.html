@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MLA Citation Generator — Free MLA 9 Format Citation Machine</title>
+<meta name="description" content="Free MLA citation generator. Create accurate MLA 9th edition works cited entries for websites, books, journal articles & videos in seconds. No sign-up required.">
+<link rel="canonical" href="https://apacitations.com/mla-citation-generator">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MLA Citation Generator — Free MLA 9 Format Citation Machine">
+<meta property="og:description" content="Free MLA citation generator. Create accurate MLA 9th edition works cited entries for websites, books, journal articles & videos in seconds. No sign-up required.">
+<meta property="og:url" content="https://apacitations.com/mla-citation-generator">
+<meta property="og:site_name" content="APACitations">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an MLA citation generator?","acceptedAnswer":{"@type":"Answer","text":"A free tool that formats your sources into correct MLA 9th edition Works Cited entries automatically. Enter a URL, ISBN, DOI, or the details manually, and it produces the citation with correct punctuation and italics."}},{"@type":"Question","name":"What does an MLA in-text citation look like?","acceptedAnswer":{"@type":"Answer","text":"MLA uses the author's last name and a page number with no comma: (Morrison 27). If there is no author, use a shortened title. If there is no page number, the author's name alone is enough."}},{"@type":"Question","name":"Do MLA citations include the URL?","acceptedAnswer":{"@type":"Answer","text":"Yes. MLA 9 includes the URL (without https://) as the location for online sources. An access date is optional but recommended when the source has no publication date."}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apacitations.com/"},{"@type":"ListItem","position":2,"name":"MLA Citation Generator","item":"https://apacitations.com/mla-citation-generator"}]}</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="/"><span class="logo-badge">A»</span>APA<em>Citations</em></a>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <nav class="main-nav">
+      <a href="/">APA</a>
+      <a href="/mla-citation-generator" class="active">MLA</a>
+      <a href="/chicago-citation-generator">Chicago</a>
+      <a href="/harvard-referencing-generator">Harvard</a>
+      <a href="/guides">Guides</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1>MLA Citation Generator</h1>
+      <p class="subtitle">Create perfect <strong>MLA 9th edition</strong> citations for your Works Cited page — websites, books, journals, and videos, free and instant.</p>
+      <div class="trust-row">
+        <span>100% free forever</span>
+        <span>No account needed</span>
+        <span>Autocite by URL, ISBN &amp; DOI</span>
+        <span>In-text citations included</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="tool-section">
+    <div class="container">
+      <div class="tool-card" id="citationTool" data-style="mla9">
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-type="website">🌐 Website</button>
+          <button class="tab" data-type="book">📕 Book</button>
+          <button class="tab" data-type="journal">📄 Journal</button>
+          <button class="tab" data-type="video">🎬 Video</button>
+        </div>
+        <div class="tool-body">
+          <div class="style-row">
+            <label for="styleSelect">Citation style:</label>
+            <select id="styleSelect">
+              <option value="apa7">APA 7th edition</option>
+              <option value="apa6">APA 6th edition</option>
+              <option value="mla9">MLA 9th edition</option>
+              <option value="chicago">Chicago 17th (bibliography)</option>
+              <option value="harvard">Harvard</option>
+            </select>
+          </div>
+
+          <div id="autociteWrap">
+            <p class="hint" id="autociteLabel" style="margin-bottom:6px">Paste the website URL to cite automatically</p>
+            <div class="autocite">
+              <input type="text" id="autociteInput" placeholder="https://www.example.com/article" aria-label="Autocite input">
+              <button class="btn" id="autociteBtn" type="button">Cite it</button>
+            </div>
+            <div class="divider">or fill in manually</div>
+          </div>
+
+          <div class="notice" id="toolNotice"></div>
+
+          <div class="form-grid" style="margin-bottom:12px">
+            <div class="full">
+              <label>Author(s)</label>
+              <div class="authors-list" id="authorsList"></div>
+              <button class="btn ghost small" id="addAuthor" type="button">+ Add another author</button>
+            </div>
+          </div>
+
+          <div class="form-grid" id="formFields"></div>
+
+          <div class="actions">
+            <button class="btn" id="generateBtn" type="button">⚡ Generate citation</button>
+          </div>
+
+          <div class="result-box" id="resultBox">
+            <p class="result-label">Your reference</p>
+            <div class="citation-output" id="refOutput"></div>
+            <div class="intext-output" id="intextOutput"></div>
+            <div class="copy-row">
+              <button class="btn secondary small" id="copyBtn" type="button">📋 Copy citation</button>
+              <span class="copied-msg" id="copiedMsg">Copied!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<section class="content-band alt"><div class="container">
+<h2>What is MLA format?</h2>
+<p><strong>MLA format</strong> is the citation style of the Modern Language Association, used mainly in English, literature, and other humanities courses. Unlike APA's author–date system, MLA uses <em>author–page</em> in-text citations — for example <strong>(Morrison 27)</strong> — and a "Works Cited" page listing every source in full.</p>
+<p>MLA 9 (the current, 2021 edition) builds every entry from a universal list of "core elements": author, title of source, title of container, other contributors, version, number, publisher, publication date, and location. Our generator applies those elements in the right order with the right punctuation automatically.</p>
+
+<h2>MLA citation examples</h2>
+<span class="label-chip">Website</span>
+<div class="example-block">Chowdhury, Rina. "The Health Benefits of Walking Every Day." <em>Healthline</em>, 12 Mar. 2024, www.healthline.com/health/benefits-of-walking.</div>
+<span class="label-chip">Book</span>
+<div class="example-block">Kahneman, Daniel. <em>Thinking, Fast and Slow</em>. Farrar, Straus and Giroux, 2011.</div>
+<span class="label-chip">Journal article</span>
+<div class="example-block">Rasch, Björn, and Jan Born. "About Sleep's Role in Memory." <em>Physiological Reviews</em>, vol. 93, no. 2, 2013, pp. 681-766. doi.org/10.1152/physrev.00032.2012.</div>
+
+<h2>MLA vs APA — which one do I need?</h2>
+<p>Use <strong>MLA</strong> for literature, languages, and humanities papers; use <strong>APA</strong> for psychology, education, and social sciences. If you're not sure, check your assignment brief or ask your instructor — and read our full <a href="/guides/apa-vs-mla">APA vs MLA comparison</a>. You can switch styles any time with the dropdown above.</p>
+</div></section>
+
+  <section class="content-band">
+    <div class="container">
+      <h2>Frequently asked questions</h2>
+      <details class="faq-item"><summary>What is an MLA citation generator?</summary><div class="faq-body">A free tool that formats your sources into correct MLA 9th edition Works Cited entries automatically. Enter a URL, ISBN, DOI, or the details manually, and it produces the citation with correct punctuation and italics.</div></details>
+<details class="faq-item"><summary>What does an MLA in-text citation look like?</summary><div class="faq-body">MLA uses the author's last name and a page number with no comma: (Morrison 27). If there is no author, use a shortened title. If there is no page number, the author's name alone is enough.</div></details>
+<details class="faq-item"><summary>Do MLA citations include the URL?</summary><div class="faq-body">Yes. MLA 9 includes the URL (without https://) as the location for online sources. An access date is optional but recommended when the source has no publication date.</div></details>
+
+      <p style="margin-top:18px">Need APA instead? Use our main <a href="/"><strong>APA citation generator</strong></a>, or browse the <a href="/guides">citation guides</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <h4>APACitations</h4>
+        <p>A fast, free citation machine for students and researchers. Generate accurate APA, MLA, Chicago, and Harvard citations for websites, books, journals, and videos — no sign-up required.</p>
+      </div>
+      <div>
+        <h4>Generators</h4>
+        <a href="/">APA Citation Generator</a>
+        <a href="/mla-citation-generator">MLA Citation Generator</a>
+        <a href="/chicago-citation-generator">Chicago Citation Generator</a>
+        <a href="/harvard-referencing-generator">Harvard Referencing Generator</a>
+      </div>
+      <div>
+        <h4>Popular guides</h4>
+        <a href="/guides/how-to-cite-a-website-in-apa">Cite a Website in APA</a>
+        <a href="/guides/how-to-cite-a-book-in-apa">Cite a Book in APA</a>
+        <a href="/guides/apa-in-text-citations">APA In-Text Citations</a>
+        <a href="/guides">All Guides</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 APACitations.com — Free APA Citation Generator</span>
+      <span>APA® is a registered trademark of the American Psychological Association. This site is not affiliated with or endorsed by the APA.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/app.js" defer></script>
+</body>
+</html>

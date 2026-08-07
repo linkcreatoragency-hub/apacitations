@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harvard Referencing Generator — Free Harvard Style Citation Machine</title>
+<meta name="description" content="Free Harvard referencing generator. Create accurate Harvard style references for websites, books & journal articles in seconds. Popular with UK & Australian universities.">
+<link rel="canonical" href="https://apacitations.com/harvard-referencing-generator">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Harvard Referencing Generator — Free Harvard Style Citation Machine">
+<meta property="og:description" content="Free Harvard referencing generator. Create accurate Harvard style references for websites, books & journal articles in seconds. Popular with UK & Australian universities.">
+<meta property="og:url" content="https://apacitations.com/harvard-referencing-generator">
+<meta property="og:site_name" content="APACitations">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Harvard referencing the same at every university?","acceptedAnswer":{"@type":"Answer","text":"No — Harvard is a family of similar styles rather than one official standard. This generator follows the widely used Cite Them Right conventions; check your university's guide for minor local variations."}},{"@type":"Question","name":"What does a Harvard in-text citation look like?","acceptedAnswer":{"@type":"Answer","text":"Author and year in brackets: (Kahneman, 2011). For a direct quote add the page: (Kahneman, 2011, p. 24). For four or more authors use the first author plus et al."}},{"@type":"Question","name":"Do Harvard references need an access date?","acceptedAnswer":{"@type":"Answer","text":"Online sources normally include one: Available at: URL (Accessed: 7 August 2026). Print books and journal articles do not need an access date."}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apacitations.com/"},{"@type":"ListItem","position":2,"name":"Harvard Referencing Generator","item":"https://apacitations.com/harvard-referencing-generator"}]}</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="/"><span class="logo-badge">A»</span>APA<em>Citations</em></a>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <nav class="main-nav">
+      <a href="/">APA</a>
+      <a href="/mla-citation-generator">MLA</a>
+      <a href="/chicago-citation-generator">Chicago</a>
+      <a href="/harvard-referencing-generator" class="active">Harvard</a>
+      <a href="/guides">Guides</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1>Harvard Referencing Generator</h1>
+      <p class="subtitle">Create accurate <strong>Harvard style</strong> references and in-text citations — the format preferred by UK and Australian universities.</p>
+      <div class="trust-row">
+        <span>100% free forever</span>
+        <span>No account needed</span>
+        <span>Autocite by URL, ISBN &amp; DOI</span>
+        <span>In-text citations included</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="tool-section">
+    <div class="container">
+      <div class="tool-card" id="citationTool" data-style="harvard">
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-type="website">🌐 Website</button>
+          <button class="tab" data-type="book">📕 Book</button>
+          <button class="tab" data-type="journal">📄 Journal</button>
+          <button class="tab" data-type="video">🎬 Video</button>
+        </div>
+        <div class="tool-body">
+          <div class="style-row">
+            <label for="styleSelect">Citation style:</label>
+            <select id="styleSelect">
+              <option value="apa7">APA 7th edition</option>
+              <option value="apa6">APA 6th edition</option>
+              <option value="mla9">MLA 9th edition</option>
+              <option value="chicago">Chicago 17th (bibliography)</option>
+              <option value="harvard">Harvard</option>
+            </select>
+          </div>
+
+          <div id="autociteWrap">
+            <p class="hint" id="autociteLabel" style="margin-bottom:6px">Paste the website URL to cite automatically</p>
+            <div class="autocite">
+              <input type="text" id="autociteInput" placeholder="https://www.example.com/article" aria-label="Autocite input">
+              <button class="btn" id="autociteBtn" type="button">Cite it</button>
+            </div>
+            <div class="divider">or fill in manually</div>
+          </div>
+
+          <div class="notice" id="toolNotice"></div>
+
+          <div class="form-grid" style="margin-bottom:12px">
+            <div class="full">
+              <label>Author(s)</label>
+              <div class="authors-list" id="authorsList"></div>
+              <button class="btn ghost small" id="addAuthor" type="button">+ Add another author</button>
+            </div>
+          </div>
+
+          <div class="form-grid" id="formFields"></div>
+
+          <div class="actions">
+            <button class="btn" id="generateBtn" type="button">⚡ Generate citation</button>
+          </div>
+
+          <div class="result-box" id="resultBox">
+            <p class="result-label">Your reference</p>
+            <div class="citation-output" id="refOutput"></div>
+            <div class="intext-output" id="intextOutput"></div>
+            <div class="copy-row">
+              <button class="btn secondary small" id="copyBtn" type="button">📋 Copy citation</button>
+              <span class="copied-msg" id="copiedMsg">Copied!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<section class="content-band alt"><div class="container">
+<h2>What is Harvard referencing?</h2>
+<p><strong>Harvard referencing</strong> is an author–date citation system used widely in universities across the UK, Ireland, and Australia. In-text citations show the author and year — <strong>(Kahneman, 2011)</strong> — and a full alphabetical reference list appears at the end of the document.</p>
+<p>Unlike APA or MLA, there is no single official Harvard manual; universities publish their own variants (such as Cite Them Right). This generator follows the most widely used Cite Them Right conventions — always double-check whether your university applies small local differences.</p>
+
+<h2>Harvard reference examples</h2>
+<span class="label-chip">Website</span>
+<div class="example-block">Chowdhury, R. (2024) <em>The health benefits of walking every day.</em> Available at: https://www.healthline.com/health/benefits-of-walking (Accessed: 7 August 2026).</div>
+<span class="label-chip">Book</span>
+<div class="example-block">Kahneman, D. (2011) <em>Thinking, fast and slow.</em> Farrar, Straus and Giroux.</div>
+<span class="label-chip">Journal article</span>
+<div class="example-block">Rasch, B. and Born, J. (2013) 'About sleep's role in memory', <em>Physiological Reviews</em>, 93(2), pp. 681–766.</div>
+
+<h2>Harvard style quick rules</h2>
+<p>Author names use initials (Kahneman, D.). The year sits in brackets right after the authors. Book and journal titles are italicized, while article titles take 'single quotation marks'. Online sources end with "Available at: URL (Accessed: date)". For four or more authors, cite the first author followed by <em>et al.</em></p>
+</div></section>
+
+  <section class="content-band">
+    <div class="container">
+      <h2>Frequently asked questions</h2>
+      <details class="faq-item"><summary>Is Harvard referencing the same at every university?</summary><div class="faq-body">No — Harvard is a family of similar styles rather than one official standard. This generator follows the widely used Cite Them Right conventions; check your university's guide for minor local variations.</div></details>
+<details class="faq-item"><summary>What does a Harvard in-text citation look like?</summary><div class="faq-body">Author and year in brackets: (Kahneman, 2011). For a direct quote add the page: (Kahneman, 2011, p. 24). For four or more authors use the first author plus et al.</div></details>
+<details class="faq-item"><summary>Do Harvard references need an access date?</summary><div class="faq-body">Online sources normally include one: Available at: URL (Accessed: 7 August 2026). Print books and journal articles do not need an access date.</div></details>
+
+      <p style="margin-top:18px">Need APA instead? Use our main <a href="/"><strong>APA citation generator</strong></a>, or browse the <a href="/guides">citation guides</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <h4>APACitations</h4>
+        <p>A fast, free citation machine for students and researchers. Generate accurate APA, MLA, Chicago, and Harvard citations for websites, books, journals, and videos — no sign-up required.</p>
+      </div>
+      <div>
+        <h4>Generators</h4>
+        <a href="/">APA Citation Generator</a>
+        <a href="/mla-citation-generator">MLA Citation Generator</a>
+        <a href="/chicago-citation-generator">Chicago Citation Generator</a>
+        <a href="/harvard-referencing-generator">Harvard Referencing Generator</a>
+      </div>
+      <div>
+        <h4>Popular guides</h4>
+        <a href="/guides/how-to-cite-a-website-in-apa">Cite a Website in APA</a>
+        <a href="/guides/how-to-cite-a-book-in-apa">Cite a Book in APA</a>
+        <a href="/guides/apa-in-text-citations">APA In-Text Citations</a>
+        <a href="/guides">All Guides</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 APACitations.com — Free APA Citation Generator</span>
+      <span>APA® is a registered trademark of the American Psychological Association. This site is not affiliated with or endorsed by the APA.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>APA Citation Generator — Free Citation Machine for APA Format | APACitations</title>
+<meta name="description" content="Free APA citation generator. Create accurate APA 7th edition citations for websites, books, journals & videos in seconds. The fast, ad-light citation machine — no sign-up required.">
+<link rel="canonical" href="https://apacitations.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="APA Citation Generator — Free Citation Machine">
+<meta property="og:description" content="Generate perfect APA 7th edition citations instantly. Cite websites, books, journal articles and videos for free — no sign-up needed.">
+<meta property="og:url" content="https://apacitations.com/">
+<meta property="og:site_name" content="APACitations">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "APA Citation Generator",
+  "url": "https://apacitations.com/",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free APA citation generator and citation machine. Create accurate APA 7th edition references and in-text citations for websites, books, journal articles, and videos.",
+  "publisher": { "@type": "Organization", "name": "APACitations", "url": "https://apacitations.com/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an APA citation generator?",
+      "acceptedAnswer": { "@type": "Answer", "text": "An APA citation generator is a free online tool that automatically formats your sources — websites, books, journal articles, and videos — into correct APA style references. You enter the source details (or just a URL, ISBN, or DOI) and the citation machine builds a properly formatted APA 7th edition citation with the correct punctuation, italics, and hanging indent." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this citation machine really free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. APACitations is 100% free with no sign-up, no citation limits, and no paywall. You can generate unlimited APA, MLA, Chicago, and Harvard citations." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is APA format?",
+      "acceptedAnswer": { "@type": "Answer", "text": "APA format is the citation style of the American Psychological Association, used widely in psychology, education, nursing, business, and the social sciences. It uses author–date in-text citations, e.g. (Smith, 2020), and a reference list with hanging indents at the end of the paper. The current version is the 7th edition, published in 2020." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I cite a website in APA format?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The basic APA 7 format for a web page is: Author, A. A. (Year, Month Day). Title of page. Site Name. URL. If there is no author, start with the title; if there is no date, use (n.d.). Our generator can extract these details automatically from the URL." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a reference and an in-text citation?",
+      "acceptedAnswer": { "@type": "Answer", "text": "An in-text citation appears in the body of your paper — for APA it is the author's last name and year, like (Smith, 2020). The full reference appears in the reference list at the end of the paper and contains complete publication details. Every in-text citation must match an entry in the reference list." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this tool support APA 6th edition?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The generator defaults to APA 7th edition (the current version), but you can switch to APA 6th edition, MLA 9, Chicago 17th edition, or Harvard referencing from the style dropdown." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="/"><span class="logo-badge">A»</span>APA<em>Citations</em></a>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <nav class="main-nav">
+      <a href="/" class="active">APA</a>
+      <a href="/mla-citation-generator">MLA</a>
+      <a href="/chicago-citation-generator">Chicago</a>
+      <a href="/harvard-referencing-generator">Harvard</a>
+      <a href="/guides">Guides</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1>APA Citation Generator</h1>
+      <p class="subtitle">A free <strong>citation machine</strong> that creates accurate <strong>APA citations</strong> in seconds. Cite websites, books, journal articles and videos in APA 7th edition — no sign-up, no limits.</p>
+      <div class="trust-row">
+        <span>APA 7th &amp; 6th edition</span>
+        <span>100% free forever</span>
+        <span>No account needed</span>
+        <span>Also MLA, Chicago &amp; Harvard</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="tool-section">
+    <div class="container">
+      <div class="tool-card" id="citationTool" data-style="apa7">
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-type="website">🌐 Website</button>
+          <button class="tab" data-type="book">📕 Book</button>
+          <button class="tab" data-type="journal">📄 Journal</button>
+          <button class="tab" data-type="video">🎬 Video</button>
+        </div>
+        <div class="tool-body">
+          <div class="style-row">
+            <label for="styleSelect">Citation style:</label>
+            <select id="styleSelect">
+              <option value="apa7">APA 7th edition</option>
+              <option value="apa6">APA 6th edition</option>
+              <option value="mla9">MLA 9th edition</option>
+              <option value="chicago">Chicago 17th (bibliography)</option>
+              <option value="harvard">Harvard</option>
+            </select>
+          </div>
+
+          <div id="autociteWrap">
+            <p class="hint" id="autociteLabel" style="margin-bottom:6px">Paste the website URL to cite automatically</p>
+            <div class="autocite">
+              <input type="text" id="autociteInput" placeholder="https://www.example.com/article" aria-label="Autocite input">
+              <button class="btn" id="autociteBtn" type="button">Cite it</button>
+            </div>
+            <div class="divider">or fill in manually</div>
+          </div>
+
+          <div class="notice" id="toolNotice"></div>
+
+          <div class="form-grid" style="margin-bottom:12px">
+            <div class="full">
+              <label>Author(s)</label>
+              <div class="authors-list" id="authorsList"></div>
+              <button class="btn ghost small" id="addAuthor" type="button">+ Add another author</button>
+            </div>
+          </div>
+
+          <div class="form-grid" id="formFields"></div>
+
+          <div class="actions">
+            <button class="btn" id="generateBtn" type="button">⚡ Generate citation</button>
+          </div>
+
+          <div class="result-box" id="resultBox">
+            <p class="result-label">Your reference</p>
+            <div class="citation-output" id="refOutput"></div>
+            <div class="intext-output" id="intextOutput"></div>
+            <div class="copy-row">
+              <button class="btn secondary small" id="copyBtn" type="button">📋 Copy citation</button>
+              <span class="copied-msg" id="copiedMsg">Copied!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band alt">
+    <div class="container">
+      <h2>How to use this APA citation machine</h2>
+      <div class="steps">
+        <div class="step">
+          <div>
+            <h3>Choose your source type</h3>
+            <p>Select whether you are citing a website, book, journal article, or online video. Each source type shows only the fields APA style actually needs.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h3>Enter a URL, ISBN, or DOI — or fill in the form</h3>
+            <p>Paste a web address and the citation generator pulls the title, site name, author, and date automatically. For books, search by ISBN; for journal articles, search by DOI.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h3>Copy your citation</h3>
+            <p>Click <em>Generate citation</em> and copy the perfectly formatted reference — italics included — straight into your paper's reference list, along with the matching in-text citation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band">
+    <div class="container">
+      <h2>APA citation examples</h2>
+      <p>Here is what correct <strong>APA 7th edition citations</strong> look like for the most common source types. Our generator follows these exact formats, including punctuation, capitalization, and italics.</p>
+
+      <span class="label-chip">Website</span>
+      <div class="example-block">Chowdhury, R. (2024, March 12). <em>The health benefits of walking every day</em>. Healthline. https://www.healthline.com/health/benefits-of-walking</div>
+
+      <span class="label-chip">Book</span>
+      <div class="example-block">Kahneman, D. (2011). <em>Thinking, fast and slow</em>. Farrar, Straus and Giroux.</div>
+
+      <span class="label-chip">Journal article</span>
+      <div class="example-block">Rasch, B., &amp; Born, J. (2013). About sleep's role in memory. <em>Physiological Reviews</em>, <em>93</em>(2), 681–766. https://doi.org/10.1152/physrev.00032.2012</div>
+
+      <span class="label-chip">YouTube video</span>
+      <div class="example-block">Kurzgesagt – In a Nutshell. (2021, August 12). <em>How the immune system actually works</em> [Video]. YouTube. https://www.youtube.com/watch?v=lXfEK8G8CUI</div>
+
+      <p>Need the full rules? Read our step-by-step guides on <a href="/guides/how-to-cite-a-website-in-apa">citing a website</a>, <a href="/guides/how-to-cite-a-book-in-apa">citing a book</a>, or <a href="/guides/how-to-cite-a-journal-article-in-apa">citing a journal article</a> in APA format.</p>
+    </div>
+  </section>
+
+  <section class="content-band alt">
+    <div class="container">
+      <h2>Why students choose our citation generator</h2>
+      <div class="feature-grid">
+        <div class="feature"><div class="icon">⚡</div><h3>Instant &amp; accurate</h3><p>Citations follow the official APA Publication Manual (7th edition) rules for punctuation, italics, and author formatting.</p></div>
+        <div class="feature"><div class="icon">🆓</div><h3>Free, no sign-up</h3><p>No account, no trial, no citation limit. Generate as many references as you need for your essay, thesis, or dissertation.</p></div>
+        <div class="feature"><div class="icon">🔎</div><h3>Autocite by URL, ISBN &amp; DOI</h3><p>Paste a link and we fill in the details for you — the fastest way to build a reference list.</p></div>
+        <div class="feature"><div class="icon">🎓</div><h3>Multiple styles</h3><p>Switch between APA 7, APA 6, MLA 9, Chicago 17th edition, and Harvard referencing with one click.</p></div>
+        <div class="feature"><div class="icon">📝</div><h3>In-text citations included</h3><p>Every reference comes with its matching parenthetical in-text citation, like (Smith &amp; Jones, 2023).</p></div>
+        <div class="feature"><div class="icon">📋</div><h3>Copy with formatting</h3><p>One click copies your citation with italics preserved, ready to paste into Word or Google Docs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band">
+    <div class="container">
+      <h2>What is an APA citation?</h2>
+      <p>An <strong>APA citation</strong> credits the sources you used in your work, following the style rules of the American Psychological Association. APA style is the standard in psychology, education, nursing, business, and most social sciences. It has two parts that work together:</p>
+      <h3>1. The in-text citation</h3>
+      <p>A brief marker in the body of your paper showing where information came from. APA uses the <em>author–date</em> system: the author's last name and the year of publication, e.g. <strong>(Kahneman, 2011)</strong> — or with a page number for direct quotes: <strong>(Kahneman, 2011, p. 24)</strong>.</p>
+      <h3>2. The reference list entry</h3>
+      <p>The full publication details, listed alphabetically on a "References" page at the end of your paper. Each entry uses a hanging indent and contains four elements: <strong>author, date, title, and source</strong>. The generator above builds both parts for you automatically.</p>
+      <h3>Why citing matters</h3>
+      <p>Correct citations protect you from plagiarism, let readers verify your sources, and show you have researched the topic properly. Most universities deduct marks for incorrect referencing — so a reliable <strong>citation machine</strong> saves both time and grades. For a full explanation of the rules, see our <a href="/guides/apa-in-text-citations">APA in-text citation guide</a> and <a href="/guides/apa-reference-page-format">APA reference page guide</a>.</p>
+    </div>
+  </section>
+
+  <section class="content-band alt">
+    <div class="container">
+      <h2>More citation styles</h2>
+      <p>APA not required? We also generate citations in every other major academic style:</p>
+      <div class="style-cards">
+        <div class="style-card"><h3>MLA 9</h3><p>The standard for literature, arts &amp; humanities.</p><a class="btn small" href="/mla-citation-generator">MLA Generator</a></div>
+        <div class="style-card"><h3>Chicago</h3><p>Used in history and publishing (17th ed.).</p><a class="btn small" href="/chicago-citation-generator">Chicago Generator</a></div>
+        <div class="style-card"><h3>Harvard</h3><p>Popular in UK &amp; Australian universities.</p><a class="btn small" href="/harvard-referencing-generator">Harvard Generator</a></div>
+        <div class="style-card"><h3>APA 6</h3><p>The older APA edition, still used by some schools.</p><a class="btn small" href="/guides/apa-6th-vs-7th-edition">APA 6 vs 7</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band">
+    <div class="container">
+      <h2>Free APA citation guides</h2>
+      <div class="guides-grid">
+        <a class="guide-card" href="/guides/how-to-cite-a-website-in-apa"><h3>How to Cite a Website in APA</h3><p>Formats and examples for web pages, with and without authors or dates.</p></a>
+        <a class="guide-card" href="/guides/how-to-cite-a-book-in-apa"><h3>How to Cite a Book in APA</h3><p>Print books, e-books, edited books, chapters, and editions.</p></a>
+        <a class="guide-card" href="/guides/how-to-cite-a-journal-article-in-apa"><h3>How to Cite a Journal Article in APA</h3><p>DOIs, volume and issue numbers, and multiple authors explained.</p></a>
+        <a class="guide-card" href="/guides/apa-in-text-citations"><h3>APA In-Text Citations</h3><p>Parenthetical vs narrative citations, page numbers, and et al. rules.</p></a>
+        <a class="guide-card" href="/guides/apa-reference-page-format"><h3>APA Reference Page Format</h3><p>Hanging indents, alphabetizing, spacing, and a full sample page.</p></a>
+        <a class="guide-card" href="/guides/apa-vs-mla"><h3>APA vs MLA</h3><p>Key differences between the two most common citation styles.</p></a>
+      </div>
+      <p style="margin-top:18px"><a href="/guides"><strong>Browse all citation guides →</strong></a></p>
+    </div>
+  </section>
+
+  <section class="content-band alt">
+    <div class="container">
+      <h2>Frequently asked questions</h2>
+      <details class="faq-item"><summary>What is an APA citation generator?</summary><div class="faq-body">An APA citation generator is a free online tool that automatically formats your sources — websites, books, journal articles, and videos — into correct APA style. You enter the source details (or just a URL, ISBN, or DOI) and the tool builds a properly formatted APA 7th edition citation with the right punctuation, italics, and ordering.</div></details>
+      <details class="faq-item"><summary>Is this citation machine really free?</summary><div class="faq-body">Yes — 100% free with no sign-up, no citation limits, and no paywall. You can generate unlimited APA, MLA, Chicago, and Harvard citations.</div></details>
+      <details class="faq-item"><summary>How do I cite a website in APA format?</summary><div class="faq-body">The basic format is: Author, A. A. (Year, Month Day). <em>Title of page</em>. Site Name. URL. If there's no author, start with the title; if there's no date, use (n.d.). Paste any URL into the generator above and it extracts these details automatically. Full rules in our <a href="/guides/how-to-cite-a-website-in-apa">website citation guide</a>.</div></details>
+      <details class="faq-item"><summary>What's the difference between a reference and an in-text citation?</summary><div class="faq-body">The in-text citation is the short marker inside your paper — (Smith, 2020) — while the reference is the full entry on the References page at the end. Every in-text citation must have a matching reference list entry.</div></details>
+      <details class="faq-item"><summary>Does this tool support APA 6th edition?</summary><div class="faq-body">Yes. The default is APA 7th edition (current since 2020), but the style dropdown also offers APA 6, MLA 9, Chicago 17, and Harvard. See <a href="/guides/apa-6th-vs-7th-edition">what changed between APA 6 and 7</a>.</div></details>
+      <details class="faq-item"><summary>Are the citations accurate enough for university work?</summary><div class="faq-body">The generator follows the official APA Publication Manual (7th edition) formats for the supported source types. As with any citation tool, we recommend a quick final check against your institution's style guide, since some universities apply small local variations.</div></details>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <h4>APACitations</h4>
+        <p>A fast, free citation machine for students and researchers. Generate accurate APA, MLA, Chicago, and Harvard citations for websites, books, journals, and videos — no sign-up required.</p>
+      </div>
+      <div>
+        <h4>Generators</h4>
+        <a href="/">APA Citation Generator</a>
+        <a href="/mla-citation-generator">MLA Citation Generator</a>
+        <a href="/chicago-citation-generator">Chicago Citation Generator</a>
+        <a href="/harvard-referencing-generator">Harvard Referencing Generator</a>
+      </div>
+      <div>
+        <h4>Popular guides</h4>
+        <a href="/guides/how-to-cite-a-website-in-apa">Cite a Website in APA</a>
+        <a href="/guides/how-to-cite-a-book-in-apa">Cite a Book in APA</a>
+        <a href="/guides/apa-in-text-citations">APA In-Text Citations</a>
+        <a href="/guides">All Guides</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 APACitations.com — Free APA Citation Generator</span>
+      <span>APA® is a registered trademark of the American Psychological Association. This site is not affiliated with or endorsed by the APA.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chicago Citation Generator — Free Chicago Style (17th Ed.) Citation Machine</title>
+<meta name="description" content="Free Chicago style citation generator. Create accurate Chicago 17th edition bibliography citations for websites, books & journal articles instantly. No sign-up.">
+<link rel="canonical" href="https://apacitations.com/chicago-citation-generator">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chicago Citation Generator — Free Chicago Style (17th Ed.) Citation Machine">
+<meta property="og:description" content="Free Chicago style citation generator. Create accurate Chicago 17th edition bibliography citations for websites, books & journal articles instantly. No sign-up.">
+<meta property="og:url" content="https://apacitations.com/chicago-citation-generator">
+<meta property="og:site_name" content="APACitations">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does this tool do Chicago footnotes?","acceptedAnswer":{"@type":"Answer","text":"The generator produces bibliography entries plus author–date in-text citations. A footnote uses the same information with slightly different punctuation: first name first, commas instead of periods, and the page cited — e.g., Daniel Kahneman, Thinking, Fast and Slow (Farrar, Straus and Giroux, 2011), 24."}},{"@type":"Question","name":"What's the difference between Chicago and Turabian?","acceptedAnswer":{"@type":"Answer","text":"Turabian is a simplified version of Chicago style designed for students. The citation formats are essentially identical, so citations from this generator work for Turabian papers too."}},{"@type":"Question","name":"When should I use Chicago style?","acceptedAnswer":{"@type":"Answer","text":"Chicago is most common in history, philosophy, religion, and the arts, and it is the house style of many book publishers. Your syllabus or instructor will normally specify it."}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apacitations.com/"},{"@type":"ListItem","position":2,"name":"Chicago Style Citation Generator","item":"https://apacitations.com/chicago-citation-generator"}]}</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="/"><span class="logo-badge">A»</span>APA<em>Citations</em></a>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <nav class="main-nav">
+      <a href="/">APA</a>
+      <a href="/mla-citation-generator">MLA</a>
+      <a href="/chicago-citation-generator" class="active">Chicago</a>
+      <a href="/harvard-referencing-generator">Harvard</a>
+      <a href="/guides">Guides</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1>Chicago Style Citation Generator</h1>
+      <p class="subtitle">Build accurate <strong>Chicago 17th edition</strong> bibliography entries for websites, books, journals, and videos — free and instant.</p>
+      <div class="trust-row">
+        <span>100% free forever</span>
+        <span>No account needed</span>
+        <span>Autocite by URL, ISBN &amp; DOI</span>
+        <span>In-text citations included</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="tool-section">
+    <div class="container">
+      <div class="tool-card" id="citationTool" data-style="chicago">
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-type="website">🌐 Website</button>
+          <button class="tab" data-type="book">📕 Book</button>
+          <button class="tab" data-type="journal">📄 Journal</button>
+          <button class="tab" data-type="video">🎬 Video</button>
+        </div>
+        <div class="tool-body">
+          <div class="style-row">
+            <label for="styleSelect">Citation style:</label>
+            <select id="styleSelect">
+              <option value="apa7">APA 7th edition</option>
+              <option value="apa6">APA 6th edition</option>
+              <option value="mla9">MLA 9th edition</option>
+              <option value="chicago">Chicago 17th (bibliography)</option>
+              <option value="harvard">Harvard</option>
+            </select>
+          </div>
+
+          <div id="autociteWrap">
+            <p class="hint" id="autociteLabel" style="margin-bottom:6px">Paste the website URL to cite automatically</p>
+            <div class="autocite">
+              <input type="text" id="autociteInput" placeholder="https://www.example.com/article" aria-label="Autocite input">
+              <button class="btn" id="autociteBtn" type="button">Cite it</button>
+            </div>
+            <div class="divider">or fill in manually</div>
+          </div>
+
+          <div class="notice" id="toolNotice"></div>
+
+          <div class="form-grid" style="margin-bottom:12px">
+            <div class="full">
+              <label>Author(s)</label>
+              <div class="authors-list" id="authorsList"></div>
+              <button class="btn ghost small" id="addAuthor" type="button">+ Add another author</button>
+            </div>
+          </div>
+
+          <div class="form-grid" id="formFields"></div>
+
+          <div class="actions">
+            <button class="btn" id="generateBtn" type="button">⚡ Generate citation</button>
+          </div>
+
+          <div class="result-box" id="resultBox">
+            <p class="result-label">Your reference</p>
+            <div class="citation-output" id="refOutput"></div>
+            <div class="intext-output" id="intextOutput"></div>
+            <div class="copy-row">
+              <button class="btn secondary small" id="copyBtn" type="button">📋 Copy citation</button>
+              <span class="copied-msg" id="copiedMsg">Copied!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<section class="content-band alt"><div class="container">
+<h2>What is Chicago style?</h2>
+<p><strong>Chicago style</strong>, defined by <em>The Chicago Manual of Style</em> (17th edition), is the standard citation format in history, philosophy, and much of academic publishing. It actually offers two systems:</p>
+<ul>
+<li><strong>Notes–Bibliography:</strong> numbered footnotes or endnotes in the text, plus a bibliography at the end. Common in history and the humanities.</li>
+<li><strong>Author–Date:</strong> parenthetical citations like (Kahneman 2011, 24), plus a reference list. Common in the sciences and social sciences.</li>
+</ul>
+<p>This generator produces <strong>bibliography entries</strong> — the full-detail format used in both systems — along with an author–date in-text citation.</p>
+
+<h2>Chicago citation examples</h2>
+<span class="label-chip">Website</span>
+<div class="example-block">Chowdhury, Rina. "The Health Benefits of Walking Every Day." Healthline. March 12, 2024. https://www.healthline.com/health/benefits-of-walking.</div>
+<span class="label-chip">Book</span>
+<div class="example-block">Kahneman, Daniel. <em>Thinking, Fast and Slow.</em> Farrar, Straus and Giroux, 2011.</div>
+<span class="label-chip">Journal article</span>
+<div class="example-block">Rasch, Björn, and Jan Born. "About Sleep's Role in Memory." <em>Physiological Reviews</em> 93, no. 2 (2013): 681–766. https://doi.org/10.1152/physrev.00032.2012.</div>
+
+<h2>Key Chicago rules to remember</h2>
+<p>Invert only the first author's name ("Last, First, and First Last"). Titles of books and journals are italicized; article and chapter titles go in "quotation marks." In the bibliography, entries are alphabetized by the first author's last name and formatted with a hanging indent. Dates are written in full — <em>March 12, 2024</em> — unlike APA's (2024, March 12).</p>
+</div></section>
+
+  <section class="content-band">
+    <div class="container">
+      <h2>Frequently asked questions</h2>
+      <details class="faq-item"><summary>Does this tool do Chicago footnotes?</summary><div class="faq-body">The generator produces bibliography entries plus author–date in-text citations. A footnote uses the same information with slightly different punctuation: first name first, commas instead of periods, and the page cited — e.g., Daniel Kahneman, Thinking, Fast and Slow (Farrar, Straus and Giroux, 2011), 24.</div></details>
+<details class="faq-item"><summary>What's the difference between Chicago and Turabian?</summary><div class="faq-body">Turabian is a simplified version of Chicago style designed for students. The citation formats are essentially identical, so citations from this generator work for Turabian papers too.</div></details>
+<details class="faq-item"><summary>When should I use Chicago style?</summary><div class="faq-body">Chicago is most common in history, philosophy, religion, and the arts, and it is the house style of many book publishers. Your syllabus or instructor will normally specify it.</div></details>
+
+      <p style="margin-top:18px">Need APA instead? Use our main <a href="/"><strong>APA citation generator</strong></a>, or browse the <a href="/guides">citation guides</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <h4>APACitations</h4>
+        <p>A fast, free citation machine for students and researchers. Generate accurate APA, MLA, Chicago, and Harvard citations for websites, books, journals, and videos — no sign-up required.</p>
+      </div>
+      <div>
+        <h4>Generators</h4>
+        <a href="/">APA Citation Generator</a>
+        <a href="/mla-citation-generator">MLA Citation Generator</a>
+        <a href="/chicago-citation-generator">Chicago Citation Generator</a>
+        <a href="/harvard-referencing-generator">Harvard Referencing Generator</a>
+      </div>
+      <div>
+        <h4>Popular guides</h4>
+        <a href="/guides/how-to-cite-a-website-in-apa">Cite a Website in APA</a>
+        <a href="/guides/how-to-cite-a-book-in-apa">Cite a Book in APA</a>
+        <a href="/guides/apa-in-text-citations">APA In-Text Citations</a>
+        <a href="/guides">All Guides</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 APACitations.com — Free APA Citation Generator</span>
+      <span>APA® is a registered trademark of the American Psychological Association. This site is not affiliated with or endorsed by the APA.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/app.js" defer></script>
+</body>
+</html>
